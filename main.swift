@@ -1,5 +1,6 @@
 import Foundation
 
+/**
 var someDateComponents = DateComponents()
 
 someDateComponents.day = 23
@@ -15,12 +16,14 @@ someDateComponentsFormatter.includesApproximationPhrase = true
 someDateComponentsFormatter.includesTimeRemainingPhrase = true
 someDateComponentsFormatter.allowedUnits = [.month, .day, .hour]
 
-let futureDate = someDateComponents.date
-
+Any futureDate = someDateComponents.date
+print(futureDate)
 let remainingTime = someDateComponentsFormatter.string(from: Date(), to: futureDate!)!
 
 let outputDateFormatter = DateFormatter()
-
+print(outputDateFormatter)
 outputDateFormatter.dateFormat = "dd/MM/yyyy"
-
+print(outputDateFormatter.dateFormat)
 print("From today \(outputDateFormatter.string(from: Date())) to 23/04/2017 there is \(remainingTime)")
+*/
+
