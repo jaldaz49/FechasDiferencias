@@ -57,7 +57,7 @@ var firstDateComponents = DateComponents()
 var secondDateComponents = DateComponents()
 
 //dateFormatter.setLocalizedDateFormatFromTemplate("ddMMyy")
-  dateFormatter.setLocalizedDateFormatFromTemplate("ddMMyy hh:mm:ss")
+  dateFormatter.setLocalizedDateFormatFromTemplate("dd/MM/yy")
 
 firstDateComponents.day = 01
 firstDateComponents.month = 01
@@ -76,10 +76,10 @@ var secondDate = Calendar(identifier: Calendar.Identifier.gregorian).date(from: 
 
 print(firstDate!)
 print(secondDate!)
-*/
+//*/
 
 // Compara fechas pero no funciona en el Swift de Repl.it
-var someDateComponents = DateComponents()
+/** var someDateComponents = DateComponents()
 
 someDateComponents.day = 23
 someDateComponents.month = 04
@@ -103,3 +103,6 @@ var outputDateFormatter = DateFormatter()
 outputDateFormatter.dateFormat = "dd/MM/yyyy"
 
 print("From today \(outputDateFormatter.string(from: Date())) to 23/04/2017 there is \(remainingTime)")
+*/
+
+//NS
