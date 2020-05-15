@@ -52,11 +52,12 @@ print("From today \(outputDateFormatter.string(from: Date())) to 23/04/2017 ther
 //var firstDate = Calendar(identifier: Calendar.Identifier.gregorian).date(from: firstDateComponents)
 //print(firstDate!)
 
-//** Dicho esto continuemos con nuestra comparación, añadamos otra fecha con un mes de diferencia con respecto a la primera:
+/** Dicho esto continuemos con nuestra comparación, añadamos otra fecha con un mes de diferencia con respecto a la primera:
 var firstDateComponents = DateComponents()
 var secondDateComponents = DateComponents()
 
 //dateFormatter.setLocalizedDateFormatFromTemplate("ddMMyy")
+  dateFormatter.setLocalizedDateFormatFromTemplate("ddMMyy hh:mm:ss")
 
 firstDateComponents.day = 01
 firstDateComponents.month = 01
@@ -75,3 +76,30 @@ var secondDate = Calendar(identifier: Calendar.Identifier.gregorian).date(from: 
 
 print(firstDate!)
 print(secondDate!)
+*/
+
+// Compara fechas pero no funciona en el Swift de Repl.it
+var someDateComponents = DateComponents()
+
+someDateComponents.day = 23
+someDateComponents.month = 04
+someDateComponents.year = 2017
+someDateComponents.calendar = Calendar(identifier: .gregorian)
+someDateComponents.timeZone = TimeZone(abbreviation: "UTC")
+
+var someDateComponentsFormatter = DateComponentsFormatter()
+
+someDateComponentsFormatter.unitsStyle = .full
+someDateComponentsFormatter.includesApproximationPhrase = true
+someDateComponentsFormatter.includesTimeRemainingPhrase = true
+someDateComponentsFormatter.allowedUnits = [.month, .day, .hour]
+
+let futureDate = someDateComponents.date
+
+let remainingTime = someDateComponentsFormatter.string(from: Date(), to: futureDate!)!
+
+var outputDateFormatter = DateFormatter()
+
+outputDateFormatter.dateFormat = "dd/MM/yyyy"
+
+print("From today \(outputDateFormatter.string(from: Date())) to 23/04/2017 there is \(remainingTime)")
