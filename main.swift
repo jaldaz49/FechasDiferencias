@@ -25,34 +25,38 @@ print(outputDateFormatter.dateFormat)
 print("From today \(outputDateFormatter.string(from: Date())) to 23/04/2017 there is \(remainingTime)")
 */
 
-let date = Date()
-print(date)
+//let date = Date()
+//print(date)
 
-let dateFormatter = DateFormatter()
+//let dateFormatter = DateFormatter()
 
-dateFormatter.dateStyle = .full
-dateFormatter.timeStyle = .full
+//dateFormatter.locale = Locale(identifier: "es_AR")
 
-print(dateFormatter.string(from: date))
+//dateFormatter.dateStyle = .full
+//dateFormatter.timeStyle = .full
+
+//print(dateFormatter.string(from: date))
 
 // Compara dos fechas
 //Antes de comparar dos fechas necesitamos tenerlas como información, como dato manejable, en nuestro caso como instancias de Date
 //con las cuales podamos trabajar, así que, de paso, veamos como definir un momento en el tiempo distinto al actual:
 
-var firstDateComponents = DateComponents()
+//var firstDateComponents = DateComponents()
 
-firstDateComponents.day = 01
-firstDateComponents.month = 01
-firstDateComponents.year = 2017
+//firstDateComponents.day = 01
+//firstDateComponents.month = 01
+//firstDateComponents.year = 2017
 
-firstDateComponents.timeZone = TimeZone(abbreviation: "UTC")
+//firstDateComponents.timeZone = TimeZone(abbreviation: "UTC")
 
-var firstDate = Calendar(identifier: Calendar.Identifier.gregorian).date(from: firstDateComponents)
-print(firstDate!)
+//var firstDate = Calendar(identifier: Calendar.Identifier.gregorian).date(from: firstDateComponents)
+//print(firstDate!)
 
-/** Dicho esto continuemos con nuestra comparación, añadamos otra fecha con un mes de diferencia con respecto a la primera:
+//** Dicho esto continuemos con nuestra comparación, añadamos otra fecha con un mes de diferencia con respecto a la primera:
 var firstDateComponents = DateComponents()
 var secondDateComponents = DateComponents()
+
+//dateFormatter.setLocalizedDateFormatFromTemplate("ddMMyy")
 
 firstDateComponents.day = 01
 firstDateComponents.month = 01
@@ -71,5 +75,3 @@ var secondDate = Calendar(identifier: Calendar.Identifier.gregorian).date(from: 
 
 print(firstDate!)
 print(secondDate!)
-
-*/
